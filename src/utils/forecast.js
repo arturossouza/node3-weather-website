@@ -13,11 +13,16 @@ const forecast = (latitude, longitude, callback) => {
             const locName = body.location.name
             const locCountry = body.location.country
             const locRegion = body.location.region
+            const temperature = body.current.temperature
+            const time = body.current.observation_time
+
             callback(undefined, {
                 forecast,
                 locName,
                 locCountry,
-                locRegion
+                locRegion,
+                temperature,
+                time
             })
         }
     })
